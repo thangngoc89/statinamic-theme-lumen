@@ -1,5 +1,5 @@
 ---
-layout: Homepage
+title: Homepage
 ---
 
 No thing here
