@@ -43,6 +43,12 @@ export default ({ config, pkg }) => ({
         ),
       },
       {
+        test: /content(\/|\\).*\.(html|ico|jpe?g|png|gif)$/,
+        loader: "file-loader" +
+          "?name=[path][name].[ext]&context=" +
+          path.join(config.cwd, config.source),
+      },
+      {
         test: /\.(html|ico|jpe?g|png|gif)$/,
         loader: "file-loader" +
           "?name=[path][name].[ext]&context=" +
