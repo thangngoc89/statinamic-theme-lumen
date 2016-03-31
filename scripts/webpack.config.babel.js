@@ -35,11 +35,14 @@ export default ({ config, pkg }) => ({
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(
           "style-loader",
-          "css-loader" + (
-            "?modules"+
-            "&localIdentName=[path][name]--[local]--[hash:base64:5]"
-          ) + "!" +
-          "postcss-loader",
+          "css-loader!postcss-loader",
+        ),
+      },
+      {
+        test: /\.sss$/,
+        loader: ExtractTextPlugin.extract(
+          "style-loader",
+          "css-loader!postcss-loader?parser=sugarss",
         ),
       },
       {
@@ -58,8 +61,11 @@ export default ({ config, pkg }) => ({
   },
 
   postcss: () => [
-    require("stylelint")(),
-    require("postcss-cssnext")({ browsers: "last 2 versions" }),
+    // require("stylelint")(),
+    require("lost")(),
+    require("rucksack-css")({
+      autoprefixer: true,
+    }),
     require("postcss-browser-reporter")(),
     require("postcss-reporter")(),
   ],

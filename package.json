@@ -15,6 +15,12 @@
     "CNAME": false,
     "assets": false
   },
+  "config": {
+    "siteTitle": "Blog by John Doe",
+    "siteDescr": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "authorName": "John Doe",
+    "twitter": "@johndoe"
+  },
   "babel": {
     "presets": [
       "react",
@@ -26,7 +32,10 @@
     "parser": "babel-eslint",
     "extends": [
       "eslint-config-i-am-meticulous/react"
-    ]
+    ],
+    "rules": {
+      "react/jsx-no-literals": 0
+    }
   },
   "stylelint": {
     "extends": "stylelint-config-standard"
@@ -69,5 +78,12 @@
     "stylelint": "^5.0.1",
     "stylelint-config-standard": "^4.0.1",
     "statinamic": "^0.9.2"
+  },
+  "dependencies": {
+    "lost": "^6.7.2",
+    "moment": "^2.12.0",
+    "rucksack-css": "^0.8.5",
+    "safe-access": "^0.1.0",
+    "sugarss": "^0.1.2"
   }
 }

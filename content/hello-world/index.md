@@ -1,4 +1,5 @@
 ---
+layout: Post
 title: "The Birth of Movable Type"
 date: "2016-03-01T22:12:03.284Z"
 route: "hello-world"
