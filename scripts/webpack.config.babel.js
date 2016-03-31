@@ -44,15 +44,11 @@ export default ({ config, pkg }) => ({
       },
       {
         test: /content(\/|\\).*\.(html|ico|jpe?g|png|gif)$/,
-        loader: "file-loader" +
-          "?name=[path][name].[ext]&context=" +
-          path.join(config.cwd, config.source),
+        loader: "file-loader?name=[path][name].[ext]&context=./content",
       },
       {
-        test: /\.(html|ico|jpe?g|png|gif)$/,
-        loader: "file-loader" +
-          "?name=[path][name].[ext]&context=" +
-          path.join(config.cwd, config.source),
+        test: /web_modules(\/|\\).*\.(html|ico|jpe?g|png|gif)$/,
+        loader: "file-loader?name=_/[path][name].[ext]&context=./web_modules",
       },
       {
         test: /\.svg$/,
