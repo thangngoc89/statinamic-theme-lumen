@@ -12,7 +12,8 @@
     "test": "npm run build"
   },
   "statinamic": {
-    "CNAME": false
+    "CNAME": false,
+    "assets": false
   },
   "babel": {
     "presets": [
