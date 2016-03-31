@@ -1,7 +1,6 @@
 ---
 title: "Contact me"
-layout: page
-route: "/contact"
+route: "contact"
 ---
 
 Lorem ipsum dolor sit amet, in summo tamquam mea, gubergren laboramus torquatos usu ne, magna rationibus sit eu. Id constituam honestatis pri, iracundia adversarium vel te. Per ferri aliquam impedit ex. Ei nec elitr nonumy vidisse, et qui fierent maluisset sadipscing, tincidunt vituperata delicatissimi te quo.
