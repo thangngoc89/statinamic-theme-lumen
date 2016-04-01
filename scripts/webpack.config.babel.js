@@ -46,9 +46,9 @@ export default ({ config, pkg }) => ({
             "?modules"+
             "&localIdentName=" +
             (
-              config.dev
-              ? "[local]--[hash:base64:5]"
-              : "[hash:base64:5]"
+              process.env.NODE_ENV === "production"
+              ? "[hash:base64:5]"
+              : "[local]--[hash:base64:5]"
             ).toString()
           ) + "!" +
           "postcss-loader",
