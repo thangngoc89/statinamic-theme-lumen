@@ -60,7 +60,11 @@ export default ({ config, pkg }) => ({
       },
       {
         test: /web_modules(\/|\\).*\.(html|ico|jpe?g|png|gif)$/,
-        loader: "file-loader?name=_/[path][name].[ext]&context=./web_modules",
+        loader: "file-loader",
+        query: {
+          name: "images/[path][name].[ext]",
+          context: "./web_modules",
+        },
       },
       {
         test: /\.svg$/,
