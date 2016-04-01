@@ -4,7 +4,7 @@ import invariant from "invariant"
 import SidebarLeft from "../../components/SidebarLeft"
 import "./style.sss"
 
-export default class Post extends Component {
+export default class Page extends Component {
 
   static propTypes = {
     __filename: PropTypes.string.isRequired,

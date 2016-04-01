@@ -19,7 +19,11 @@
     "siteTitle": "Blog by John Doe",
     "siteDescr": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
     "authorName": "John Doe",
-    "twitter": "@johndoe"
+    "twitter": "johndoe",
+    "vk": "johndoe",
+    "email": "johndoe@gmail.com",
+    "github": "johndoe",
+    "telegram": "johndoe"
   },
   "babel": {
     "presets": [

@@ -30,6 +30,10 @@ export default class Layout extends Component {
               "rel": "stylesheet",
               "href": "https://fonts.googleapis.com/css?family=Roboto:700|Raleway:600,700|PT+Sans:400,400italic,700,700italic",
             },
+            {
+              "rel": "stylesheet",
+              "href": "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css",
+            },
           ] }
           meta={ [
             { property: "og:site_name", content: config.siteTitle },

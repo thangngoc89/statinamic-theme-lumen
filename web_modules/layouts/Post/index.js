@@ -2,10 +2,10 @@ import React, { Component, PropTypes } from "react"
 import Helmet from "react-helmet"
 import Link from "statinamic/lib/Link"
 import invariant from "invariant"
-import moment from "moment"
+import Time from "../../components/Time"
 import "./style.sss"
 
-export default class Page extends Component {
+export default class Post extends Component {
 
   static propTypes = {
     children: PropTypes.oneOfType([ PropTypes.array, PropTypes.object ]),
@@ -71,7 +71,7 @@ export default class Page extends Component {
             <div className="date-published">
               <em>
                 { "Published " }
-                { moment(head.date).format("D MMM YYYY") }
+                <Time time={ head.date } format="D MMM YYYY" />
               </em>
             </div>
           </div>

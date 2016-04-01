@@ -1,12 +1,13 @@
-import React, { PropTypes } from "react"
+import React, { Component, PropTypes } from "react"
 import Link from "statinamic/lib/Link"
-import moment from "moment"
-import access from "safe-access"
 import SidebarLeft from "../../components/SidebarLeft"
+import Time from "../../components/Time"
 import enhanceCollection from "statinamic/lib/enhance-collection"
 import Helmet from "react-helmet"
 
-class BlogIndex extends React.Component {
+import "./style.sss"
+
+export default class Homepage extends Component {
   static contextTypes = {
     collection: PropTypes.array.isRequired,
     metadata: PropTypes.object.isRequired,
@@ -21,39 +22,31 @@ class BlogIndex extends React.Component {
       filter: (t) => (t.layout === "Post"),
       sort: "date",
       reverse: true,
-    }).map((post) => {
-      const title = access(post, "title") || post.__url
-      const description = access(post, "description")
-      const datePublished = access(post, "date")
-      const category = access(post, "category")
-
-      return (
-        <div className="blog-post">
-          <time dateTime={ moment(datePublished).format("MMMM D, YYYY") }>
-            { moment(datePublished).format("MMMM YYYY") }
-          </time>
-          <span style={ { padding: "5px" } } />
-          <span className="blog-category">
-            { category }
-          </span>
-          <h2>
-            <Link
-              style={ { borderBottom: "none" } }
-              to={ post.__url }
-            >
-              { title }
-            </Link>
-          </h2>
-          <p dangerouslySetInnerHTML={ { __html: description } } />
+    }).map((post) => (
+      <div
+        key={ post.__url }
+        className="blog-post"
+      >
+        <Time format="MMMM YYYY" time={ post.date } />
+        <span style={ { padding: "5px" } } />
+        <span className="blog-category">{ post.category }</span>
+        <h2>
           <Link
-            className="readmore"
+            style={ { borderBottom: "none" } }
             to={ post.__url }
           >
-            { "Read" }
+            { post.title }
           </Link>
-        </div>
-      )
-    })
+        </h2>
+        <p>{ post.description }</p>
+        <Link
+          className="readmore"
+          to={ post.__url }
+        >
+          { "Read" }
+        </Link>
+      </div>
+    ))
 
     return (
       <div>
@@ -70,5 +63,3 @@ class BlogIndex extends React.Component {
     )
   }
 }
-
-export default BlogIndex
