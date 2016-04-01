@@ -44,7 +44,12 @@ export default ({ config, pkg }) => ({
           "style-loader",
           "css-loader" + (
             "?modules"+
-            "&localIdentName=[path][name]--[local]--[hash:base64:5]"
+            "&localIdentName=" +
+            (
+              config.dev
+              ? "[local]--[hash:base64:5]"
+              : "[hash:base64:5]"
+            ).toString()
           ) + "!" +
           "postcss-loader",
         ),
