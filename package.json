@@ -8,8 +8,9 @@
     "lint": "npm run lint:js && npm run lint:css",
     "start": "statinamic start",
     "build": "statinamic build",
-    "pretest": "npm run lint",
-    "test": "npm run build"
+    "pretest": "npm run lint:js",
+    "test": "npm run build",
+    "deploy": "gh-pages --silent --repo https://$GITHUB_TOKEN@github.com/thangngoc89/statinamic-theme-lumen.git --dist dist"
   },
   "statinamic": {
     "CNAME": false,
