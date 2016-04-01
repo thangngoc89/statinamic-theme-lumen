@@ -5,6 +5,7 @@ import Helmet from "react-helmet"
 import "./reset.css"
 import "./typography.css"
 import "./highlight.css"
+import "./heading-anchors.css"
 import "./blog.sss"
 
 export default class Layout extends Component {

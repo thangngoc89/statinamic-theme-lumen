@@ -1,0 +1,37 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+}
+
+.statinamic-HeadingAnchor {
+  position: absolute;
+  left: -1.5rem;
+  opacity: 0.1;
+  transition: opacity 0.2s;
+  color: #5d93ff;
+}
+
+.statinamic-HeadingAnchor,
+.statinamic-HeadingAnchor:visited {
+  color: #5d93ff;
+}
+
+@media (max-width: 567px) {
+  .statinamic-HeadingAnchor {
+    position: relative;
+    left: 0;
+  }
+}
+
+h1:hover .statinamic-HeadingAnchor,
+h2:hover .statinamic-HeadingAnchor,
+h3:hover .statinamic-HeadingAnchor,
+h4:hover .statinamic-HeadingAnchor,
+h5:hover .statinamic-HeadingAnchor,
+h6:hover .statinamic-HeadingAnchor {
+  opacity: 1;
+}
