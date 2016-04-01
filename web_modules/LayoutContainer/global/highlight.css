@@ -1,14 +1,8 @@
 p > code, span > code {
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	white-space: pre;
 	white-space: pre-wrap;
 	white-space: pre-line;
-	white-space: -pre-wrap;
-	white-space: -o-pre-wrap;
-	white-space: -moz-pre-wrap;
-	white-space: -hp-pre-wrap;
 	word-wrap: break-word;
 	background: #f8f8f8;
 	display: inline;

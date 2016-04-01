@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from "react"
 import Link from "statinamic/lib/Link"
-import SidebarLeft from "../../components/SidebarLeft"
 import Time from "../../components/Time"
 import enhanceCollection from "statinamic/lib/enhance-collection"
 import Helmet from "react-helmet"
+import SidebarLayout from "../../components/SidebarLayout"
 
-import "./style.sss"
+import styles from "./style.css"
 
 export default class Homepage extends Component {
   static contextTypes = {
@@ -25,11 +25,15 @@ export default class Homepage extends Component {
     }).map((post) => (
       <div
         key={ post.__url }
-        className="blog-post"
+        className={ styles.postEntry }
       >
-        <Time format="MMMM YYYY" time={ post.date } />
+        <Time
+          format="MMMM YYYY"
+          time={ post.date }
+          className={ styles.time }
+        />
         <span style={ { padding: "5px" } } />
-        <span className="blog-category">{ post.category }</span>
+        <span className={ styles.category }>{ post.category }</span>
         <h2>
           <Link
             style={ { borderBottom: "none" } }
@@ -40,7 +44,7 @@ export default class Homepage extends Component {
         </h2>
         <p>{ post.description }</p>
         <Link
-          className="readmore"
+          className={ styles.readmore }
           to={ post.__url }
         >
           { "Read" }
@@ -49,17 +53,10 @@ export default class Homepage extends Component {
     ))
 
     return (
-      <div>
+      <SidebarLayout>
         <Helmet title={ config.siteTitle } />
-        <SidebarLeft {...this.props} />
-        <div className="content">
-          <div className="main">
-            <div className="main-inner">
-              { pageLinks }
-            </div>
-          </div>
-        </div>
-      </div>
+        { pageLinks }
+      </SidebarLayout>
     )
   }
 }

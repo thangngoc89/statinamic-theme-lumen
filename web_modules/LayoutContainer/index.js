@@ -2,11 +2,8 @@
 import React, { Component, PropTypes } from "react"
 import Helmet from "react-helmet"
 
-import "./reset.css"
-import "./typography.css"
-import "./highlight.css"
-import "./heading-anchors.css"
-import "./blog.sss"
+import "./global/global.styles"
+import styles from "./styles.css"
 
 export default class Layout extends Component {
 
@@ -38,10 +35,10 @@ export default class Layout extends Component {
           ] }
           meta={ [
             { property: "og:site_name", content: config.siteTitle },
-            { name: "twitter:site", content: config.twitter },
+            { name: "twitter:site", content: `@${  config.twitter }` },
           ] }
         />
-        <div className="wrapper">
+        <div className={ styles.wrapper }>
           { this.props.children }
         </div>
       </div>

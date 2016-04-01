@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from "react"
 import Helmet from "react-helmet"
 import invariant from "invariant"
-import SidebarLeft from "../../components/SidebarLeft"
-import "./style.sss"
+
+import SidebarLayout from "../../components/SidebarLayout"
+import styles from "./style.css"
 
 export default class Page extends Component {
 
@@ -47,25 +48,18 @@ export default class Page extends Component {
     ]
 
     return (
-      <div>
+      <SidebarLayout>
         <Helmet
           title={ head.title }
           meta={ meta }
         />
-        <SidebarLeft />
-        <div className="content">
-          <div className="main">
-            <div className="main-inner">
-              <div className="blog-page">
-                <div className="text">
-                  <h1>{ head.title }</h1>
-                  <div dangerouslySetInnerHTML={ { __html: body } } />
-                </div>
-              </div>
-            </div>
+        <div className={ styles.wrapper }>
+          <div className={ styles.inner }>
+            <h1>{ head.title }</h1>
+            <div dangerouslySetInnerHTML={ { __html: body } } />
           </div>
         </div>
-      </div>
+      </SidebarLayout>
     )
   }
 }

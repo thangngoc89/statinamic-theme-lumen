@@ -1,0 +1,41 @@
+.wrapper {
+  margin-top: 30px;
+}
+
+.wrapper ul {
+	list-style: none;
+	padding: 0;
+	margin: 10px 0;
+	clear: fix-legacy;
+}
+
+.wrapper ul > li {
+	float: left;
+	margin-right: 5px;
+	text-align: center;
+	line-height: 21px;
+	height: 24px;
+	width: 24px;
+	border-radius: 3px;
+	background: #f4edde;
+}
+
+.wrapper ul > li:hover {
+	background: #f4efe8;
+}
+
+.wrapper ul > li > a {
+	border-bottom: 0;
+	line-height: 21px;
+	cursor: pointer;
+}
+
+.wrapper ul > li > a > i {
+	color: #333;
+	font-size: 14px;
+	line-height: 21px;
+}
+
+.wrapper ul > li:hover a > i {
+	color: #222;
+}

@@ -1,0 +1,29 @@
+.wrapper {
+  margin: 20px 0px 10px;
+}
+
+.wrapper ul {
+  list-style: none;
+	padding-left: 0;
+}
+
+.wrapper ul li {
+  margin: 10px 0 10px;
+}
+
+.link {
+  font-size: 16px;
+	line-height: 26px;
+	margin-bottom: 26px;
+	border-bottom: 0;
+	font-weight: 400;
+	color: #222;
+}
+
+.link:hover {
+  border-bottom: 1px solid;
+}
+
+.linkActive {
+  border-bottom: 1px solid !important;
+}

@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from "react"
 import Helmet from "react-helmet"
-import Link from "statinamic/lib/Link"
 import invariant from "invariant"
 import Time from "../../components/Time"
-import "./style.sss"
+import GoHomeButton from "../../components/GoHomeButton"
+import styles from "./styles.css"
 
 export default class Post extends Component {
 
@@ -58,24 +58,17 @@ export default class Post extends Component {
           title={ metaTitle }
           meta={ meta }
         />
-        <Link
-          className="gohome"
-          to="/"
-        >
-          { "All Articles" }
-        </Link>
-        <div className="blog-single">
-          <div className="text">
+        <GoHomeButton text="All Articles" />
+        <div className={ styles.wrapper }>
+          <div className={ styles.text }>
             <h1>{ head.title }</h1>
             <div dangerouslySetInnerHTML={ { __html: body } } />
-            <div className="date-published">
-              <em>
-                { "Published " }
-                <Time time={ head.date } format="D MMM YYYY" />
-              </em>
-            </div>
+            <p className={ styles.datePublished }>
+              { "Published " }
+              <Time time={ head.date } format="D MMM YYYY" />
+            </p>
           </div>
-          <div className="footer">
+          <div className={ styles.footer }>
             {/* <ReadNext post={ post } {...this.props}/> */}
             <hr />
             <p>

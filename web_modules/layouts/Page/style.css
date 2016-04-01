@@ -1,0 +1,20 @@
+.wrapper {
+  margin-bottom: 40px;
+}
+
+.inner {
+  & h1 {
+  	font-size: responsive 20px 36px;
+  	margin-top: 0;
+  }
+
+  & p {
+  	font-size: responsive 14px 16px;
+  	line-height: 1.5;
+  	margin-top: 10px;
+  }
+
+  @media (--md) {
+    padding: 0 15px;
+  }
+}

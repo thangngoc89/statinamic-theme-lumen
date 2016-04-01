@@ -1,0 +1,52 @@
+.postEntry {
+  margin-bottom: 30px;
+}
+
+.postEntry:last-child {
+	margin-bottom: 10px;
+}
+
+.postEntry h2 {
+	margin-top: 10px;
+	line-height: 30px;
+	margin-bottom: 20px;
+}
+
+.postEntry h2 a:hover {
+	border-bottom: 1px solid;
+}
+
+.postEntry p {
+	font-size: 16px;
+	line-height: 26px;
+	margin-bottom: 26px;
+}
+
+.time {
+	font-size: 14px;
+	color: #222;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.04rem;
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+
+.category {
+	font-size: 14px;
+	color: #f7a046 !important;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.04rem;
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+
+.readmore {
+	font-size: 16px;
+	color: #5d93ff !important;
+	font-weight: 600;
+	font-family: 'Raleway', Helvetica, Arial, sans-serif;
+
+  &:hover {
+  	border-bottom: 1px solid;
+  }
+}
