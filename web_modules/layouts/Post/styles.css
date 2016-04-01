@@ -1,0 +1,50 @@
+.wrapper h1 {
+  text-align: center;
+  margin-top: 30px;
+
+  @media (--md) {
+		margin-top: 15px
+  }
+}
+
+.text {
+  line-height: 2rem;
+	margin-bottom: 2rem;
+
+  & img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (--md) {
+    padding: 0 15px;
+		line-height: 1.625rem;
+		margin: 0rem 0rem 1.625rem;
+  }
+}
+
+.wrapper h1,
+.datePublished,
+.text div :not(figure) {
+  max-width: 35rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.datePublished {
+  font-style: italic;
+}
+
+.footer {
+  max-width: 35rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  line-height: 2rem;
+
+  @media (--md) {
+    padding: 0 15px;
+		line-height: 1.625rem;
+		margin: 0rem 0rem 1.625rem;
+  }
+}

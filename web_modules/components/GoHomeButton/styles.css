@@ -1,0 +1,27 @@
+.button {
+  font-family: 'Raleway', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	text-align: center;
+	color: #343e47;
+	font-weight: 600;
+	position: fixed;
+	left: 20px;
+	top: 20px;
+	opacity: 0.5;
+	padding: 8px 18px;
+	border: 2px solid #343e47 !important;
+	border-radius: 3px;
+
+  @media (--md) {
+    position: static;
+    margin: 20px auto 0;
+    text-align: center;
+    width: 85px;
+    display: block;
+  }
+}
+
+.button:hover {
+  color: #201e28;
+	opacity: 1;
+}

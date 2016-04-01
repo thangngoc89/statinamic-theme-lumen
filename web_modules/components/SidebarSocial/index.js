@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from "react"
-import "./style.sss"
+import styles from "./style.css"
 
 export default class SidebarSocial extends Component {
   static contextTypes = {
@@ -19,7 +19,7 @@ export default class SidebarSocial extends Component {
     const telegram = config.telegram
 
     return (
-      <div className="blog-social">
+      <div className={ styles.wrapper }>
         <ul>
           <li><a href={ twitter }><i className="fa fa-twitter"></i></a></li>
           <li><a href={ github }><i className="fa fa-github-alt"></i></a></li>

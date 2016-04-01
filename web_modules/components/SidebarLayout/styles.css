@@ -1,0 +1,27 @@
+.wrapper {
+  lost-column: 2/3;
+
+  @media (--lg) {
+    lost-column: 2/4;
+  }
+  @media (--md) {
+    lost-column: 7/12;
+  }
+  @media (--sm) {
+    lost-column: 4/4;
+  }
+}
+
+.inner {
+  padding: 40px 35px;
+
+  @media (--lg) {
+    padding: 35px 20px;
+  }
+  @media (--md) {
+    padding: 30px 20px
+  }
+  @media (--sm) {
+    padding: 25px 20px;
+  }
+}

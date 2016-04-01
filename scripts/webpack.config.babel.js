@@ -32,17 +32,26 @@ export default ({ config, pkg }) => ({
         },
       },
       {
-        test: /\.css$/,
+        test: /global\.styles$/,
         loader: ExtractTextPlugin.extract(
           "style-loader",
           "css-loader!postcss-loader",
         ),
       },
       {
-        test: /\.sss$/,
+        test: /\.css$/,
         loader: ExtractTextPlugin.extract(
           "style-loader",
-          "css-loader!postcss-loader?parser=sugarss",
+          "css-loader" + (
+            "?modules"+
+            "&localIdentName=" +
+            (
+              config.dev
+              ? "[local]--[hash:base64:5]"
+              : "[hash:base64:5]"
+            ).toString()
+          ) + "!" +
+          "postcss-loader",
         ),
       },
       {
@@ -62,10 +71,21 @@ export default ({ config, pkg }) => ({
 
   postcss: () => [
     // require("stylelint")(),
-    require("lost")(),
-    require("rucksack-css")({
-      autoprefixer: true,
+    require("postcss-import")(),
+    require("postcss-cssnext")({
+      browsers: "last 2 versions",
+      features: {
+        customMedia: {
+          extensions: {
+            "--lg": "screen and (max-width: 1100px)",
+            "--md": "screen and (max-width: 900px)",
+            "--sm": "screen and (max-width: 500px)",
+          },
+        },
+      },
     }),
+    require("lost")(),
+    require("rucksack-css")(),
     require("postcss-browser-reporter")(),
     require("postcss-reporter")(),
   ],
@@ -76,8 +96,6 @@ export default ({ config, pkg }) => ({
       NODE_ENV: JSON.stringify(
         config.production ? "production" : process.env.NODE_ENV
       ),
-      CLIENT: true,
-      REDUX_DEVTOOLS: Boolean(process.env.REDUX_DEVTOOLS),
       STATINAMIC_PATHNAME: JSON.stringify(process.env.STATINAMIC_PATHNAME),
     } }),
     ...config.production && [
