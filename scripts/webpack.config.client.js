@@ -1,5 +1,5 @@
 import path from "path"
-
+import webpack from "webpack"
 // ! client side loader only \\
 export default ({ config }) => {
   const { webpackConfig } = config
@@ -31,6 +31,29 @@ export default ({ config }) => {
 
     entry: {
       "statinamic-client": path.join(__dirname, "index-client"),
+      "statinamic-bundle": [
+        "react",
+        "react-dom",
+        "redux",
+        "react-redux",
+        "react-helmet",
+        "whatwg-fetch",
+      ],
+    },
+
+    ...config.production && {
+      output: {
+        ...webpackConfig.output,
+        filename: "[name].[chunkhash].js",
+        chunkFilename: "[chunkhash].js",
+      },
+
+      plugins: [
+        ...webpackConfig.plugins,
+        new webpack.optimize.CommonsChunkPlugin({
+          names: [ "statinamic-bundle", "manifest" ],
+        }),
+      ],
     },
   }
 }
