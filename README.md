@@ -28,6 +28,10 @@ $ npm start
 $ npm run build
 ```
 
+## Deploy
+<!-- Markdown snippet -->
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/thangngoc89/statinamic-theme-lumen)
+
 # Thankyou
 
 - Thanks [Alexandr Shelepenok](http://ashk.io) for created [such an awesome theme](https://github.com/hb-gatsby/gatsby-starter-lumen)
